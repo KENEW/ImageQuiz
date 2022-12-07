@@ -136,8 +136,6 @@ public class InGameFrame extends JFrame implements Runnable
         
         imageQuizLabel.setIcon(convertImgIcon);
         add(imageQuizLabel);
-        imageQuizLabel.setBounds(0, WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_WIDTH);
-
     }
 
     // 정답을 체크하고 기능을 실행합니다.
@@ -219,11 +217,6 @@ public class InGameFrame extends JFrame implements Runnable
         CreateQuiz("토마토", 1);
         CreateQuiz("말", 1);
         CreateQuiz("고슴도치", 1);
-
-        //CreateQuiz("포도", 1);
-        //CreateQuiz("모니터", 1);
-        //CreateQuiz("에어팟", 1);
-        //CreateQuiz("말", 1);
    
         // 시간 초 UI
         timeLabel = new JLabel((timeOut / 10) + "");
@@ -312,17 +305,6 @@ public class InGameFrame extends JFrame implements Runnable
         DrawImage();
     }
 
-    private String GetCurrentTime()
-    {
-        Calendar c = Calendar.getInstance();
-		int hour = c.get(Calendar.HOUR_OF_DAY);
-		int min = c.get(Calendar.MINUTE);
-		int sec = c.get(Calendar.SECOND);
-		
-	    String time = hour + ":" + min + ":" + sec;
-        return time;
-    }
-
     private boolean TimeCheck(int time)
     {
         return curTime % time == 0;
@@ -405,5 +387,3 @@ public class InGameFrame extends JFrame implements Runnable
         successLabel.setVisible(false);
     }
 }
-
-// label.setHorizontalAlignment(JLabel.CENTER);
